@@ -1,11 +1,30 @@
-<div align="center">
+# Raga Jatsuma - Interactive ID Card Portfolio
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Sebuah website portofolio interaktif yang memadukan simulasi ID Card virtual 3D dengan profil pengembang full-stack lengkap.
 
-  <h1>Built with AI Studio</h2>
+## Fitur Utama
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- **ID Card Virtual 3D**: Menggunakan `motion/react` untuk mendukung rotasi interaktif 3D, efek geser (drag-to-tilt), dan animasi balik kartu (flip) yang responsif.
+- **Interaksi Tanpa Hambatan**: Rotasi kartu dinonaktifkan saat kartu dalam kondisi terbalik untuk mempermudah navigasi tautan media sosial dan WhatsApp.
+- **Dukungan Tema Terang & Gelap**: Sistem beralih tema (Light/Dark mode) dengan transisi mulus, termasuk penyesuaian kontras kartu ID agar selalu berbeda dengan warna latar belakang halaman.
+- **Portofolio Lengkap**: Dashboard detail portofolio dengan tab ringkasan proyek unggulan, riwayat seluruh proyek beserta fitur pencarian/filter, tabel keahlian interaktif, serta formulir kontak dengan penyimpanan pesan berbasis `localStorage`.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Teknologi yang Digunakan
 
-</div>
+- **Sisi Klien**: React 18, TypeScript, Tailwind CSS, Framer Motion (`motion/react`)
+- **Pustaka Ikon**: Lucide React
+- **Build Tool**: Vite
+
+## Cara Menjalankan Lokal
+
+1. Pasang dependensi proyek:
+   ```bash
+   npm install
+   ```
+
+2. Jalankan server pengembangan lokal:
+   ```bash
+   npm run dev
+   ```
+
+3. Buka peramban ke [http://localhost:3000](http://localhost:3000) untuk melihat aplikasi.

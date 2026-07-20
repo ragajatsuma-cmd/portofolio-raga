@@ -1,0 +1,8 @@
+{
+  "name": "Remix: ID Card Portfolio",
+  "description": "Halaman website portofolio interaktif menggunakan kartu ID virtual yang dapat digeser, dibalik (flip/flop) untuk media sosial, dan diklik untuk membuka portofolio lengkap.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
