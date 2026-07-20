@@ -8,7 +8,10 @@ import {
   Shield,
   Laptop,
   BarChart3,
-  Smartphone
+  Smartphone,
+  MessageCircle,
+  Instagram,
+  ExternalLink
 } from 'lucide-react';
 import { PortfolioData } from '../types';
 
@@ -146,7 +149,7 @@ export default function PortfolioDetail({ data, onBack, theme = 'dark' }: Portfo
               <span className={`text-5xl lg:text-6xl font-extrabold tracking-tight select-none leading-none ${
                 isLight ? 'text-indigo-600/20' : 'text-indigo-400/25'
               }`}>
-                02
+                &gt;
               </span>
               <div>
                 <h2 className={`text-2xl lg:text-3xl font-extrabold tracking-tight ${
@@ -272,7 +275,7 @@ export default function PortfolioDetail({ data, onBack, theme = 'dark' }: Portfo
               <span className={`text-5xl lg:text-6xl font-extrabold tracking-tight select-none leading-none ${
                 isLight ? 'text-indigo-600/20' : 'text-indigo-400/25'
               }`}>
-                03
+                &gt;
               </span>
               <div>
                 <h2 className={`text-2xl lg:text-3xl font-extrabold tracking-tight ${
@@ -371,6 +374,88 @@ export default function PortfolioDetail({ data, onBack, theme = 'dark' }: Portfo
               </a>
             </div>
 
+          </div>
+        </section>
+
+        {/* 04 Media Sosial Section */}
+        <section className="space-y-8">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b pb-6 border-slate-200 dark:border-slate-800/80">
+            <div className="flex items-start gap-4">
+              <span className={`text-5xl lg:text-6xl font-extrabold tracking-tight select-none leading-none ${
+                isLight ? 'text-indigo-600/20' : 'text-indigo-400/25'
+              }`}>
+                &gt;
+              </span>
+              <div>
+                <h2 className={`text-2xl lg:text-3xl font-extrabold tracking-tight ${
+                  isLight ? 'text-slate-900' : 'text-slate-100'
+                }`}>
+                  Media Sosial
+                </h2>
+                <span className="text-[10px] lg:text-xs font-mono tracking-widest text-indigo-500 uppercase font-bold mt-1 block">
+                  HUBUNGI & IKUTI SAYA
+                </span>
+              </div>
+            </div>
+            <p className={`text-xs lg:text-sm max-w-sm leading-relaxed ${
+              isLight ? 'text-slate-600 font-medium' : 'text-slate-400'
+            }`}>
+              Mari terhubung di media sosial atau hubungi langsung untuk kolaborasi lebih lanjut.
+            </p>
+          </div>
+
+          {/* Social Media Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {data.socials.map((social) => {
+              let iconElement;
+              if (social.icon === 'MessageCircle' || social.platform === 'WhatsApp') {
+                iconElement = <MessageCircle size={22} />;
+              } else if (social.icon === 'Instagram' || social.platform === 'Instagram') {
+                iconElement = <Instagram size={22} />;
+              } else if (social.icon === 'Mail' || social.platform === 'E-mail') {
+                iconElement = <Mail size={22} />;
+              } else {
+                iconElement = <ExternalLink size={22} />;
+              }
+
+              return (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between gap-6 hover:translate-y-[-2px] hover:shadow-md group ${
+                    isLight 
+                      ? 'bg-white border-slate-200 shadow-sm hover:border-indigo-300 hover:text-indigo-600' 
+                      : 'bg-slate-900/20 border-slate-800/80 hover:border-indigo-500/30 hover:text-indigo-400'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-colors group-hover:scale-105 duration-300 ${
+                      isLight 
+                        ? 'bg-indigo-50 border-indigo-100 text-indigo-600' 
+                        : 'bg-indigo-950/40 border-indigo-900/40 text-indigo-400'
+                    }`}>
+                      {iconElement}
+                    </div>
+                    <span className={`text-[10px] font-mono tracking-wide ${
+                      isLight ? 'text-slate-400' : 'text-slate-500'
+                    }`}>
+                      IKUTI / HUBUNGI
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className={`text-lg font-bold mb-1 ${isLight ? 'text-slate-900' : 'text-slate-100'}`}>
+                      {social.platform}
+                    </h3>
+                    <p className={`text-xs font-mono tracking-tight ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                      {social.username}
+                    </p>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </section>
       </div>
